@@ -167,6 +167,22 @@
                 Published: {{ comic.month }}/{{ comic.day }}/{{ comic.year }}
             </p>
             <!-- TODO: Add any buttons for navigation, random, or form to fetch comics -->
+
+	    <!--Random comic button-->
+	    <div class="navigation">
+		<a href="/random" class = "btn">Random Comic</a>
+	    </div>
+
+	    <!-- Navigation buttons -->
+	    <div class="navigation">
+   		 <a href="/navigate/{{ comic.num }}/prev" class="btn" {% if comic.num == 1 %}disabled{% endif %}>
+        	Previous
+    		</a>
+    		<a href="/navigate/{{ comic.num }}/next" class="btn" {% if comic.num == latest_comic_num %}disabled{% endif %}>
+        	Next
+   		 </a>
+	   </div>
+
         </div>
         {% endif %}
     </main>
