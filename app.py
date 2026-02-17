@@ -94,10 +94,12 @@ def random_comic():
 @app.route('/navigate/<int:comic_num>/<direction>')
 def navigate(comic_num, direction):
     # direction will be 'prev' or 'next'
+    #Get Latest comic number
     latest_comic = get_latest_comic()
     if not latest_comic:
         return render_template('index.html', comic=None, error="Could not fetch latest comic.")
 
+    #move comic number
     if direction == 'prev':
         comic_num -= 1
     elif direction == 'next':
@@ -109,6 +111,7 @@ def navigate(comic_num, direction):
     if comic_num > latest_comic['num']:
         comic_num = latest_comic['num']
 
+    #Fetch comic data
     comic = get_comic_by_number(comic_num)
     if comic:
         return render_template('index.html', comic=comic, latest_num=latest_comic['num'], error=None)
