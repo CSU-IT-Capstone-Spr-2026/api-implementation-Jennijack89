@@ -1,7 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/zN2AskmG)
 # XKCD Comic Viewer
 
-[Add your 2-3 sentence description of what your application does here]
+A simple web application to view XKCD comics using the XKCD API.  
+Users can view the latest comic, a specific comic by number, a random comic, and navigate with Previous/Next buttons.
 
 ## Features Implemented
 
@@ -9,8 +10,8 @@ Check off the features you implemented (must have at least 4 and 2 are implemete
 
 - [X] Feature #1: Display the Latest Comic
 - [X] Feature #2: Display a Specific Comic by Number
-- [ ] Feature #3: Random Comic Button
-- [ ] Feature #4: Navigation (Previous/Next)
+- [X] Feature #3: Random Comic Button
+- [X] Feature #4: Navigation (Previous/Next)
 - [ ] Feature #5: Search by Comic Number Form
 - [ ] Feature #6: Display Multiple Recent Comics
 
@@ -53,7 +54,11 @@ Check off the features you implemented (must have at least 4 and 2 are implemete
 
 ## Usage
 
-[Explain how to use your application - what can users do? What buttons should they click?]
+- **Latest Comic:** The home page automatically shows the most recent comic.  
+- **Random Comic:** Click the "Random Comic" button to view a random comic.  
+- **Navigation Buttons:**  
+- **Previous:** Goes to the previous comic (will be disabled on the first comic).  
+- **Next:** Go to the next comic (will be disabled on the latest comic).  
 
 ## Screenshots
 
@@ -72,15 +77,18 @@ Example:
 
 ## Challenges and Solutions
 
-[Write 2-3 paragraphs about:]
-- What challenges did you face while working on this assignment?
-- How did you solve them?
-- What did you learn about APIs?
+- The main Challenge I faced was learning to work with technologies I haven't used in a while. Git, Python, HTLM
+- I've found I need a lot more practice and some refreshers
+- It was also a challenge managing navigation buttons to avoid invalid comic numbers.  
+- I learned a little about how API responses work and how flask acts as the go between
+- I also learned about JSON parsing and basic error handling.  
+- Solved issues by using Python functions to validate comic numbers and I'm still working on using the disable buttons correctly.
 
 ## Future Improvements
 
-[Optional: What would you add if you had more time?]
+- I would add the search by comic number feature.  
+- The display multiple recent comics on one page feature.  
 
 ## Author
 
-[Your name]
+Jennifer Jackson
