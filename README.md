@@ -62,13 +62,16 @@ Check off the features you implemented (must have at least 4 and 2 are implemete
 
 ## Screenshots
 
-[Add screenshots of your application here - you can drag and drop images into GitHub or use Markdown image syntax]
+### Latest Comic Page
+![Latest Comic](screenshots/latest-comic-page.png)
 
-Example:
-```
-![Latest Comic View](screenshots/latest-comic.png)
-![Search Feature](screenshots/search.png)
-```
+### Random Comic Page
+![Random Comic](screenshots/random-comic-page.png)
+
+### Navigation Buttons
+![Previous](screenshots/previous-comic-page.png)
+![Next](screenshots/next-comic-page.png)
+
 
 ## API Endpoints Used
 
@@ -79,10 +82,11 @@ Example:
 
 - The main Challenge I faced was learning to work with technologies I haven't used in a while. Git, Python, HTLM
 - I've found I need a lot more practice and some refreshers
-- It was also a challenge managing navigation buttons to avoid invalid comic numbers.  
+- It was also a challenge managing navigation buttons to avoid invalid comic numbers.
+- Another issue was template variable errors when latest_comic_num was not passed to all routes. I corrected this by ensuring every render_template() call included the required variables.
 - I learned a little about how API responses work and how flask acts as the go between
 - I also learned about JSON parsing and basic error handling.  
-- Solved issues by using Python functions to validate comic numbers and I'm still working on using the disable buttons correctly.
+- Solved issues by using Python functions to validate comic numbers and by adding boundary checks in the navigation route and conditionally displaying the Previous and Next buttons in the template.
 
 ## Future Improvements
 
