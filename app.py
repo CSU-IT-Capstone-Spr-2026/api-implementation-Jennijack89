@@ -85,9 +85,9 @@ def random_comic():
 
     comic = get_comic_by_number(random_num)
     if not comic:
-        return render_template('index.html',comic=None,
+        return render_template('index.html',comic=None,latest_comic_num=max_num,
                                error = f"Comic #{random_num} could not be found.")
-    return render_template('index.html',comic=comic,error=None)
+    return render_template('index.html',comic=comic, latest_comic_num=max_num, error=None)
 
 # Feature #4: Navigation (Previous/Next)
 
@@ -97,7 +97,8 @@ def navigate(comic_num, direction):
     #Get Latest comic number
     latest_comic = get_latest_comic()
     if not latest_comic:
-        return render_template('index.html', comic=None, error="Could not fetch latest comic.")
+        return render_template('index.html', comic=None, latest_comic_num=None,
+                               error="Could not fetch latest comic.")
 
     #move comic number
     if direction == 'prev':
@@ -114,9 +115,9 @@ def navigate(comic_num, direction):
     #Fetch comic data
     comic = get_comic_by_number(comic_num)
     if comic:
-        return render_template('index.html', comic=comic, latest_num=latest_comic['num'], error=None)
+        return render_template('index.html', comic=comic, latest_comic_num=latest_comic['num'], error=None)
     else:
-        return render_template('index.html', comic=None, error=f"Comic #{comic_num} could not be found.")
+        return render_template('index.html', comic=None, latest_comic_num=latest_comic['num'],error=f"Comic #{comic_num} could not be found.")
 
     
         

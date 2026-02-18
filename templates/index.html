@@ -175,15 +175,19 @@
 
 	    <!-- Navigation buttons -->
 	    <div class="navigation">
-		<!--Previous Button>
-   		 <a href="/navigate/{{ comic.num }}/prev" class="btn" {% if comic.num == 1 %} style = "display:none"{% endif %}>
-        	Previous
-    		</a>
+		<!--Previous Button -->
+		{% if comic.num > 1 %} 
+   		 	<a href="/navigate/{{ comic.num }}/prev" class="btn">
+        		Previous
+    			</a>
+		{% endif %}
 
-		<!--Next Button>
-    		<a href="/navigate/{{ comic.num }}/next" class="btn" {% if comic.num == latest_comic_num %}style="display:none"{% endif %}>
-        	Next
-   		 </a>
+		<!--Next Button -->
+		{% if comic.num < latest_comic_num %}
+    			<a href="/navigate/{{ comic.num }}/next" class="btn">
+        		Next
+   			 </a>
+		{% endif %}
 	   </div>
 
         </div>
